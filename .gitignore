@@ -55,12 +55,16 @@
 
 ## Caffe
 
+# user build configuration
+Makefile.config
+
 
 # Data and models are either
 # 1. reference, and not casually committed
 # 2. custom, and live on their own unless they're deliberated contributed
 data/*
 models/*
+netImage/*
 *.caffemodel
 *.caffemodel.h5
 *.solverstate
