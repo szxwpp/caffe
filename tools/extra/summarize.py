@@ -8,11 +8,12 @@ tabular listing, taking a prototxt file as input.
 Use this tool to check at a glance that the computation you've specified is the
 computation you expect.
 """
-
+from __future__ import print_function
 from caffe.proto import caffe_pb2
 from google import protobuf
 import re
 import argparse
+
 
 # ANSI codes for coloring blobs (used cyclically)
 COLORS = ['92', '93', '94', '95', '97', '96', '42', '43;30', '100',
@@ -58,7 +59,7 @@ def print_table(table, max_width):
             right_col += width
             row_str += cell + ' '
             row_str += ' ' * max(right_col - printed_len(row_str), 0)
-        print row_str
+        print(row_str)
 
 def summarize_net(net):
     disconnected_tops = set()

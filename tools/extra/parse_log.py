@@ -5,7 +5,7 @@ Parse training log
 
 Evolved from parse_log.sh
 """
-
+from __future__ import print_function
 import os
 import re
 import extract_seconds
@@ -172,7 +172,7 @@ def write_csv(output_filename, dict_list, delimiter, verbose=False):
         dict_writer.writeheader()
         dict_writer.writerows(dict_list)
     if verbose:
-        print 'Wrote %s' % output_filename
+        print('Wrote %s' % output_filename)
 
 
 def parse_args():
