@@ -245,13 +245,13 @@ job_name = "SSD_{}".format(resize)
 model_name = "VGG_VOC0712_{}".format(job_name)
 
 # Directory which stores the model .prototxt file.
-save_dir = "models/VGGNet/VOC0712/{}".format(job_name)
+save_dir = "{}/models/VGGNet/VOC0712/{}".format(os.path.join(os.environ['HOME'], 'github/caffe'),job_name)
 # Directory which stores the snapshot of models.
-snapshot_dir = "models/VGGNet/VOC0712/{}".format(job_name)
+snapshot_dir = "{}/models/VGGNet/VOC0712/{}".format(os.path.join(os.environ['HOME'], 'github/caffe'),job_name)
 # Directory which stores the job script and log file.
-job_dir = "jobs/VGGNet/VOC0712/{}".format(job_name)
+job_dir = "{}/jobs/VGGNet/VOC0712/{}".format(os.path.join(os.environ['HOME'], 'github/caffe'),job_name)
 # Directory which stores the detection results.
-output_result_dir = "{}/data/VOCdevkit/results/VOC2007/{}/Main".format(os.environ['HOME'], job_name)
+output_result_dir = "{}/data/VOCdevkit/results/VOC2007/{}/Main".format(os.path.join(os.environ['HOME'], 'github'), job_name)
 
 # model definition files.
 train_net_file = "{}/train.prototxt".format(save_dir)
