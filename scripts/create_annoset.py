@@ -4,8 +4,16 @@ import shutil
 import subprocess
 import sys
 
+home_path=os.environ['HOME']
+python_path=os.path.join(home_path,'github/caffe/python')
+pycaffe_path=os.path.join(home_path,'github/caffe/python/caffe')
+sys.path.append(python_path)
+sys.path.append(pycaffe_path)
+
 from caffe.proto import caffe_pb2
 from google.protobuf import text_format
+
+
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser(description="Create AnnotatedDatum database")

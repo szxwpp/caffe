@@ -2,6 +2,8 @@
 *.dll
 *.pyd
 
+netImage/
+
 
 # Compiled Object files
 *.slo
@@ -12,6 +14,7 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
+*.dll
 
 # Compiled Static libraries
 *.lai
@@ -25,6 +28,7 @@
 
 # Compiled python
 *.pyc
+*.pyd
 
 # Compiled MATLAB
 *.mex*
@@ -66,6 +70,7 @@ Makefile.config
 # 2. custom, and live on their own unless they're deliberated contributed
 data/*
 models/*
+netImage/*
 *.caffemodel
 *.caffemodel.h5
 *.solverstate

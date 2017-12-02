@@ -1,7 +1,4 @@
 from __future__ import print_function
-import caffe
-from caffe.model_libs import *
-from google.protobuf import text_format
 
 import math
 import os
@@ -9,6 +6,17 @@ import shutil
 import stat
 import subprocess
 import sys
+
+home_path=os.environ['HOME']
+python_path=os.path.join(home_path,'github/caffe/python')
+pycaffe_path=os.path.join(home_path,'github/caffe/python/caffe')
+sys.path.append(python_path)
+sys.path.append(pycaffe_path)
+
+import caffe
+from caffe.model_libs import *
+from google.protobuf import text_format
+
 
 # Add extra layers on top of a "base" network (e.g. VGGNet or Inception).
 def AddExtraLayers(net, use_batchnorm=True, lr_mult=1):
@@ -329,13 +337,13 @@ clip = False
 
 # Solver parameters.
 # Defining which GPUs to use.
-gpus = "0,1,2,3"
+gpus = "0"
 gpulist = gpus.split(",")
 num_gpus = len(gpulist)
 
 # Divide the mini-batch to different GPUs.
-batch_size = 32
-accum_batch_size = 32
+batch_size = 8
+accum_batch_size = 8
 iter_size = accum_batch_size / batch_size
 solver_mode = P.Solver.CPU
 device_id = 0
