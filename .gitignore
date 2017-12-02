@@ -1,5 +1,6 @@
 ## General
-
+*.dll
+*.pyd
 # Compiled Object files
 *.slo
 *.lo
