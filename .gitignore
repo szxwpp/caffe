@@ -1,4 +1,9 @@
 ## General
+*.dll
+*.pyd
+
+netImage/
+
 
 # Compiled Object files
 *.slo
@@ -65,6 +70,7 @@ Makefile.config
 # 2. custom, and live on their own unless they're deliberated contributed
 data/*
 models/*
+netImage/*
 *.caffemodel
 *.caffemodel.h5
 *.solverstate
