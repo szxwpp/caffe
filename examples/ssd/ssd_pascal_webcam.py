@@ -1,4 +1,14 @@
 from __future__ import print_function
+
+import os
+import sys
+# the path of python caffe
+home_path=os.environ['HOME']
+python_path=os.path.join(home_path,'github/caffe/python')
+pycaffe_path=os.path.join(home_path,'github/caffe/python/caffe')
+sys.path.append(python_path)
+sys.path.append(pycaffe_path)
+
 import caffe
 from caffe.model_libs import *
 from google.protobuf import text_format

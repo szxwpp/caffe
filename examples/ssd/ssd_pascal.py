@@ -7,6 +7,7 @@ import stat
 import subprocess
 import sys
 
+# the path of python caffe
 home_path=os.environ['HOME']
 python_path=os.path.join(home_path,'github/caffe/python')
 pycaffe_path=os.path.join(home_path,'github/caffe/python/caffe')
@@ -342,7 +343,9 @@ gpulist = gpus.split(",")
 num_gpus = len(gpulist)
 
 # Divide the mini-batch to different GPUs.
-batch_size = 8
+
+
+  batch_size = 8
 accum_batch_size = 8
 iter_size = accum_batch_size / batch_size
 solver_mode = P.Solver.CPU
