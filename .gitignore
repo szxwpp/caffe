@@ -108,3 +108,4 @@ MANIFEST-*
 jobs
 temp
 examples/*/*lmdb
+tools/extra/*.log.*
