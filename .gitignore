@@ -1,5 +1,8 @@
 ## General
 
+jobs/
+
+
 # Compiled Object files
 *.slo
 *.lo
