@@ -116,6 +116,38 @@ static bool matchExt(const std::string & fn,
   return false;
 }
 
+bool ReadImageToMTCNNDatum(const string& filename, const vector<float>& labels,
+    const int height, const int width, const bool is_color,
+    const std::string& encoding, MTCNNDatum* mtcnn_datum){
+    //label, roi_minx, roi_miny, roi_maxx, roi_maxy, pts
+
+    bool status = ReadImageToDatum(filename, static_cast<int>(labels[0]), height, width, is_color,
+                                 encoding, mtcnn_datum->mutable_datum());
+    if (status == false) {
+        return status;
+      }
+    else{
+        MTCNNBBox* roi = mtcnn_datum->mutable_roi();
+        roi->set_xmin(labels[1]);
+        roi->set_ymin(labels[2]);
+        roi->set_xmax(labels[3]);
+        roi->set_ymax(labels[4]);
+
+        mtcnn_datum->clear_pts();
+        for(int i=5;i<labels.size();i++)
+        {
+            mtcnn_datum->add_pts(labels[i]);
+        }
+
+        return status;
+    }
+
+
+
+
+}
+
+
 bool ReadImageToDatum(const string& filename, const int label,
     const int height, const int width, const bool is_color,
     const std::string & encoding, Datum* datum) {

@@ -96,6 +96,10 @@ inline bool ReadFileToDatum(const string& filename, Datum* datum) {
   return ReadFileToDatum(filename, -1, datum);
 }
 
+bool ReadImageToMTCNNDatum(const string& filename, const vector<float>& labels,
+        const int height, const int width, const bool is_color,
+        const std::string& encoding, MTCNNDatum* mtcnn_datum);
+
 bool ReadImageToDatum(const string& filename, const int label,
     const int height, const int width, const bool is_color,
     const std::string & encoding, Datum* datum);
