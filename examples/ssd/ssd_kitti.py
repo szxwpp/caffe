@@ -11,6 +11,7 @@ import sys
 home_path=os.environ['HOME']
 python_path=os.path.join(home_path,'github/caffe/python')
 pycaffe_path=os.path.join(home_path,'github/caffe/python/caffe')
+data_path = os.path.join(home_path, 'github/data/KITTIdevkit')
 sys.path.append(python_path)
 sys.path.append(pycaffe_path)
 
@@ -88,9 +89,9 @@ resume_training = True
 remove_old_models = False
 
 # The database file for training data. Created by data/KITTI/create_data.sh
-train_data = "examples/KITTI/KITTI_trainval_lmdb"
+train_data = os.path.join(data_path, "KITTI/lmdb/KITTI_trainval_lmdb")
 # The database file for testing data. Created by data/KITTI/create_data.sh
-test_data = "examples/KITTI/KITTI_test_lmdb"
+test_data = os.path.join(data_path, "KITTI/lmdb/KITTI_test_lmdb")
 # Specify the batch sampler.
 resize_width = 300
 resize_height = 300
