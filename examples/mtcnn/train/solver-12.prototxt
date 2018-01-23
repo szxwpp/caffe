@@ -1,0 +1,14 @@
+net : "/home/vincent/github/caffe/examples/mtcnn/train/det1-train.prototxt"
+# The base learning rate, momentum and the weight decay of the network.
+base_lr: 0.00001
+momentum: 0.9
+weight_decay: 0.004
+# The learning rate policy
+lr_policy: "step"
+stepsize: 30000
+gamma: 0.8
+display: 1000
+max_iter: 500000
+snapshot: 100000
+snapshot_prefix: "/home/vincent/github/caffe/models/mtcnn/mtcnn_pnet"
+solver_mode: GPU
