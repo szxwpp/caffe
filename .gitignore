@@ -1,4 +1,8 @@
 ## General
+jobs/
+
+
+
 *.dll
 *.pyd
 # Compiled Object files
