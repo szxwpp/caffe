@@ -107,3 +107,7 @@ LOCK
 LOG*
 CURRENT
 MANIFEST-*
+
+
+test/
+result/
